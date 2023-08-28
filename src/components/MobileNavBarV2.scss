@@ -1,0 +1,36 @@
+@use '../styles/abstracts/sizes';
+@use '../styles/abstracts/colors';
+
+.mobile-navbar-v2 {
+  display: none;
+
+  @media (max-width: sizes.$layout-breakpoint-small) {
+    display: block;
+    position: fixed;
+    bottom: 0;
+    padding: 50px 0 20px 0;
+    width: calc(100% - 48px);
+    background-color: colors.$bg-color;
+    box-shadow: 2px 2px 30px 30px colors.$bg-color;
+  }
+
+  &__mobile-links {
+    font-family: RobotoMono;
+    display: none;
+
+    @media (max-width: sizes.$layout-breakpoint-small) {
+      display: flex;
+      align-items: center;
+      gap: 60px;
+      padding-top: 20px;
+
+      svg {
+        scale: 0.75;
+      }
+    }
+  }
+
+  &__logo {
+    width: 200px;
+  }
+}
